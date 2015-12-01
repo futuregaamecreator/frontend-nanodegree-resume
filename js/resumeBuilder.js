@@ -223,14 +223,14 @@ projects.display = function () {
 
             }
         }
-      
+
 
         $("#projects").append(HTMLprojectStart);
         $(".project-entry:last").append(formattedTitle);
         $(".project-entry:last").append(formattedDates);
         $(".project-entry:last").append(formattedDescription);
         $(".project-entry:last").append(formattedImage);
-  
+
     }
 };
 
