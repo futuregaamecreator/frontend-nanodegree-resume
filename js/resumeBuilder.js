@@ -13,11 +13,11 @@ var bio = {
         "location": "Atlanta, GA",
         "locationURL": "https://www.google.com/maps/place/Atlanta,+GA/@33.7679192,-84.560692,11z/data=!3m1!4b1!4m2!3m1!1s0x88f5045d6993098d:0x66fede2f990b630b"
     },
-    "bioPic": "images/Me.jpg",
+    "bioPic": "images/me.jpg",
     "welcomeMessage": "Welcome to My Resume Page. I am working everyday to become a better Front End Web Developer",
-    "skills": ["HTML", "CSS", "JavaScript", "Bootstrap", "Git", "GitHub", "Windows", "Drupal", "WordPress", "Networking"],
+    "skills": ["HTML", "CSS", "JavaScript", "Bootstrap", "Git", "GitHub", "Windows", "Drupal", "WordPress", "Networking", "Troubleshooting"],
 };
-bio.display = function() {
+bio.display = function () {
 
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     $("#header").prepend(formattedName);
@@ -74,32 +74,32 @@ bio.display = function() {
 
 var work = {
     "jobs": [{
-        "employer": "Cricket",
-        "title": "ROS Desk Tier 2 Specialist",
-        "location": "Atlanta, GA",
-        "dates": " Nov 2014-current",
-        "description": "I assist all Cricket Dealer with issues with Store Issues such as Setting up Camera Systesm, Not able to open applications, and Locked out of Accounts"
-    }, {
-        "employer": "Horizon Software",
-        "title": "K - 12 POS Anaylst ",
-        "location": "Duluth,GA ",
-        "dates": "Aug 2014 - Oct 2014",
-        "description": "I fixed school system POS system Remotely"
-    }, {
-        "employer": "OutComes Heatlh",
-        "title": "Document Management Specialist",
-        "location": "Alpharetta, GA ",
-        "dates": "Jan 2014 - July 2014",
-        "description": " Verified Electronic Medical Records for Accurate reports and Merge Duplicates"
-    }, {
-        "employer": "Wellstar",
-        "title": "Kennestone Implation Specialist",
-        "location": "Marietta, GA",
-        "dates": "Oct 2013 - Dec 2013",
-        "description": "Assisted in Converting Wellstar Biggest Hospital from Paper Records to Electronic Medical Record"
-    }]
+            "employer": "Cricket",
+            "title": "ROS Desk Tier 2 Specialist",
+            "location": "Atlanta, GA",
+            "dates": " Nov 2014-current",
+            "description": "I assist all Cricket Dealer with issues with Store Issues such as Setting up Camera Systesm, Not able to open applications, and Locked out of Accounts"
+        }, {
+            "employer": "Horizon Software",
+            "title": "K - 12 POS Anaylst ",
+            "location": "Duluth,GA ",
+            "dates": "Aug 2014 - Oct 2014",
+            "description": "I fixed school system POS system Remotely"
+        }, {
+            "employer": "OutComes Heatlh",
+            "title": "Document Management Specialist",
+            "location": "Alpharetta, GA ",
+            "dates": "Jan 2014 - July 2014",
+            "description": " Verified Electronic Medical Records for Accurate reports and Merge Duplicates"
+        }, {
+            "employer": "Wellstar",
+            "title": "Kennestone Implation Specialist",
+            "location": "Marietta, GA",
+            "dates": "Oct 2013 - Dec 2013",
+            "description": "Assisted in Converting Wellstar Biggest Hospital from Paper Records to Electronic Medical Record"
+        }]
 };
-work.display = function() {
+work.display = function () {
     for (job in work.jobs) {
         $("#workExperience").append(HTMLworkStart);
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -116,49 +116,49 @@ work.display = function() {
 
 var education = {
     "schools": [{
-        "name": "DeVry University",
-        "location": "Decatur, GA",
-        "degree": "Bachelor of Science",
-        "major": "Game Simulation and Programming",
-        "dates": "2005-2009",
-        "url": "http://www.devry.edu/"
-    },
-    {
-        "name": "DeVry University",
-        "location": "Decatur, GA",
-        "degree": "Bachelor of Science",
-        "major": "Game Simulation and Programming",
-        "dates": "2005-2009",
-        "url": "http://www.devry.edu/"
-    }],
+            "name": "DeVry University",
+            "location": "Decatur, GA",
+            "degree": "Bachelor of Science",
+            "major": "Game Simulation and Programming",
+            "dates": "2005-2009",
+            "url": "http://www.devry.edu/"
+        },
+        {
+            "name": "DeVry University",
+            "location": "Decatur, GA",
+            "degree": "Bachelor of Science",
+            "major": "Game Simulation and Programming",
+            "dates": "2005-2009",
+            "url": "http://www.devry.edu/"
+        }],
     "onlineCourses": [{
-        "title": "Intro to HTML and CSS",
-        "school": "Udacity",
-        "dates": "2015",
-        "url": "https://www.udacity.com/course/intro-to-html-and-css--ud304-nd/"
-    }, {
-        "title": "Responsive Web Design Fundementals",
-        "school": "Udacity",
-        "dates": "2015",
-        "url": "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893-nd/"
-    }, {
-        "title": "Responsive Images",
-        "school": "Udacity",
-        "dates": "2015",
-        "url": "https://www.udacity.com/course/responsive-images--ud882-nd/"
-    }, {
-        "title": "JavaScript Fundamentals",
-        "school": "Udacity",
-        "dates": "2015",
-        "url": "https://www.udacity.com/course/javascript-basics--ud804-nd/"
-    }, {
-        "title": "Front-End Web Developer Nanodegree",
-        "school": "Udacity",
-        "dates": "2015-Current",
-        "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001/"
-    }]
+            "title": "Intro to HTML and CSS",
+            "school": "Udacity",
+            "dates": "2015",
+            "url": "https://www.udacity.com/course/intro-to-html-and-css--ud304-nd/"
+        }, {
+            "title": "Responsive Web Design Fundementals",
+            "school": "Udacity",
+            "dates": "2015",
+            "url": "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893-nd/"
+        }, {
+            "title": "Responsive Images",
+            "school": "Udacity",
+            "dates": "2015",
+            "url": "https://www.udacity.com/course/responsive-images--ud882-nd/"
+        }, {
+            "title": "JavaScript Fundamentals",
+            "school": "Udacity",
+            "dates": "2015",
+            "url": "https://www.udacity.com/course/javascript-basics--ud804-nd/"
+        }, {
+            "title": "Front-End Web Developer Nanodegree",
+            "school": "Udacity",
+            "dates": "2015-Current",
+            "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001/"
+        }]
 };
-education.display = function() {
+education.display = function () {
     for (school in education.schools) {
         var formattedSchool = HTMLschoolName.replace("%data%", education.schools[school].name);
         var formattedSchool = formattedSchool.replace("#", education.schools[school].url);
@@ -190,46 +190,47 @@ education.display = function() {
 
 var projects = {
     "projects": [{
-        "title": "ProfileES",
-        "dates": "2013",
-        "description": "Interned for Accelerated Design and helped create their Kickstart web page. Created Webforms, Created Custom Rules in PHP, and some Front End work",
-        "images": [""],
-        "url": "http://profilees.com"
-    },
-	{
-        "title": "Formula ATL",
-        "dates": "2015",
-        "description": "Created a Wordpress website for a Private Car Seller that sells custom cars to Celebrities and sports player. Created a Custom Login and Created a unique website layout for new buyers and admins to update content",
-        "images": [""],
-        "url": "http://formulaatl.com"
-    },
-	{
-        "title": "GX Website",
-        "dates": "2015",
-        "description": "Created a new responsive HTML website for a Gaming Lounge in ATL",
-        "images": [""],
-        "url": "http://gxgaming.com"
-    }]
+            "title": "ProfileES",
+            "dates": "2013",
+            "description": "Interned for Accelerated Design and helped create their Kickstart web page. Created Webforms, Created Custom Rules in PHP, and some Front End work",
+            "images": ["images/ProfileES.jpg"],
+            "url": "http://profilees.com"
+        },
+        {
+            "title": "Formula ATL",
+            "dates": "2015",
+            "description": "Created a Wordpress website for a Private Car Seller that sells custom cars to Celebrities and sports player. Created a Custom Login and Created a unique website layout for new buyers and admins to update content",
+            "images": ["images/forumula1.jpg"],
+            "url": "http://formulaatl.com"
+        },
+        {
+            "title": "GX Website",
+            "dates": "2015",
+            "description": "Created a new responsive HTML website for a Gaming Lounge in ATL",
+            "images": ["images/gx.jpg"],
+            "url": "http://gxgaming.com"
+        }]
 };
-projects.display = function() {
+projects.display = function () {
     for (project in projects.projects) {
-        $("#projects").append(HTMLprojectStart);
-
         var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-        $(".project-entry:last").append(formattedTitle);
-
+        var formattedTitle = formattedTitle.replace("#", projects.projects[project].url);
         var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-        $(".project-entry:last").append(formattedDates);
-
         var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-        $(".project-entry:last").append(formattedDescription);
-
         if (projects.projects[project].images.length > 0) {
             for (image in projects.projects[project].images) {
                 var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-                $(".project-entry:last").append(formattedImage);
+
             }
         }
+      
+
+        $("#projects").append(HTMLprojectStart);
+        $(".project-entry:last").append(formattedTitle);
+        $(".project-entry:last").append(formattedDates);
+        $(".project-entry:last").append(formattedDescription);
+        $(".project-entry:last").append(formattedImage);
+  
     }
 };
 
