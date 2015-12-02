@@ -6,14 +6,14 @@ var bio = {
         "mobileURL": "",
         "email": "futuregamecreator@gmail.com",
         "emailURL": "mailto:futuregamecreator@gmail.com",
-        "github": "futurgaamecreator",
-        "githubURL": "https://github.com/futuregaamecreator",
+        "github": "futuregaamecreator",
+        "twitter": "Futuregamecreat",
         "linkedin": "George Harrison",
         "linkedinURL": "https://www.linkedin.com/in/george-harrison-30178144",
         "location": "Atlanta, GA",
         "locationURL": "https://www.google.com/maps/place/Atlanta,+GA/@33.7679192,-84.560692,11z/data=!3m1!4b1!4m2!3m1!1s0x88f5045d6993098d:0x66fede2f990b630b"
     },
-    "bioPic": "images/me.jpg",
+    "biopic": "images/me.jpg",
     "welcomeMessage": "Welcome to My Resume Page. I am working everyday to become a better Front End Web Developer",
     "skills": ["HTML", "CSS", "JavaScript", "Bootstrap", "Git", "GitHub", "Windows", "Drupal", "WordPress", "Networking", "Troubleshooting"],
 };
@@ -23,7 +23,7 @@ bio.display = function () {
     $("#header").prepend(formattedName);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     $("#header").prepend(formattedRole);
-    var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+    var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
     $("#header").append(formattedBioPic);
     var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(formattedwelcomeMsg);
@@ -38,6 +38,9 @@ bio.display = function () {
     var formattedbioGithub = formattedbioGithub.replace("#", bio.contacts.githubURL);
     $("#topContacts").append(formattedbioGithub);
     $("#footerContacts").append(formattedbioGithub);
+    var formattedbioTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    $("#topContacts").append(formattedbioTwitter);
+    $("#footerContacts").append(formattedbioTwitter);
     var formattedbioLinkedin = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
     var formattedbioLinkedin = formattedbioLinkedin.replace("#", bio.contacts.linkedinURL);
     $("#topContacts").append(formattedbioLinkedin);
@@ -70,6 +73,7 @@ bio.display = function () {
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[10]);
         $("#skills").append(formattedSkill);
     }
+
 };
 
 var work = {
@@ -77,25 +81,25 @@ var work = {
             "employer": "Cricket",
             "title": "ROS Desk Tier 2 Specialist",
             "location": "Atlanta, GA",
-            "dates": " Nov 2014-current",
+            "dates": 2014,
             "description": "I assist all Cricket Dealer with issues with Store Issues such as Setting up Camera Systesm, Not able to open applications, and Locked out of Accounts"
         }, {
             "employer": "Horizon Software",
             "title": "K - 12 POS Anaylst ",
             "location": "Duluth,GA ",
-            "dates": "Aug 2014 - Oct 2014",
+            "dates": 2014,
             "description": "I fixed school system POS system Remotely"
         }, {
             "employer": "OutComes Heatlh",
             "title": "Document Management Specialist",
             "location": "Alpharetta, GA ",
-            "dates": "Jan 2014 - July 2014",
+            "dates": 2014,
             "description": " Verified Electronic Medical Records for Accurate reports and Merge Duplicates"
         }, {
             "employer": "Wellstar",
             "title": "Kennestone Implation Specialist",
             "location": "Marietta, GA",
-            "dates": "Oct 2013 - Dec 2013",
+            "dates": 2013,
             "description": "Assisted in Converting Wellstar Biggest Hospital from Paper Records to Electronic Medical Record"
         }]
 };
@@ -119,42 +123,35 @@ var education = {
             "name": "DeVry University",
             "location": "Decatur, GA",
             "degree": "Bachelor of Science",
-            "major": "Game Simulation and Programming",
-            "dates": "2005-2009",
+            "majors": "Game Simulation and Programming",
+            "dates": 2009,
             "url": "http://www.devry.edu/"
         },
-        {
-            "name": "DeVry University",
-            "location": "Decatur, GA",
-            "degree": "Bachelor of Science",
-            "major": "Game Simulation and Programming",
-            "dates": "2005-2009",
-            "url": "http://www.devry.edu/"
-        }],
+    ],
     "onlineCourses": [{
             "title": "Intro to HTML and CSS",
             "school": "Udacity",
-            "dates": "2015",
+            "dates": 2015,
             "url": "https://www.udacity.com/course/intro-to-html-and-css--ud304-nd/"
         }, {
             "title": "Responsive Web Design Fundementals",
             "school": "Udacity",
-            "dates": "2015",
+            "dates": 2015,
             "url": "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893-nd/"
         }, {
             "title": "Responsive Images",
             "school": "Udacity",
-            "dates": "2015",
+            "dates": 2015,
             "url": "https://www.udacity.com/course/responsive-images--ud882-nd/"
         }, {
             "title": "JavaScript Fundamentals",
             "school": "Udacity",
-            "dates": "2015",
+            "dates": 2015,
             "url": "https://www.udacity.com/course/javascript-basics--ud804-nd/"
         }, {
             "title": "Front-End Web Developer Nanodegree",
             "school": "Udacity",
-            "dates": "2015-Current",
+            "dates": 2015,
             "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001/"
         }]
 };
@@ -165,7 +162,7 @@ education.display = function () {
         var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
         var formattedSchoolDegree = formattedSchool + formattedDegree;
         var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-        var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+        var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
 
         $("#education").append(HTMLschoolStart);
         $(".education-entry:last").append(formattedSchoolDegree);
@@ -191,21 +188,21 @@ education.display = function () {
 var projects = {
     "projects": [{
             "title": "ProfileES",
-            "dates": "2013",
+            "dates": 2013,
             "description": "Interned for Accelerated Design and helped create their Kickstart web page. Created Webforms, Created Custom Rules in PHP, and some Front End work",
             "images": ["images/ProfileES.jpg"],
             "url": "http://profilees.com"
         },
         {
             "title": "Formula ATL",
-            "dates": "2015",
+            "dates": 2015,
             "description": "Created a Wordpress website for a Private Car Seller that sells custom cars to Celebrities and sports player. Created a Custom Login and Created a unique website layout for new buyers and admins to update content",
             "images": ["images/forumula1.jpg"],
             "url": "http://formulaatl.com"
         },
         {
             "title": "GX Website",
-            "dates": "2015",
+            "dates": 2015,
             "description": "Created a new responsive HTML website for a Gaming Lounge in ATL",
             "images": ["images/gx.jpg"],
             "url": "http://gxgaming.com"
