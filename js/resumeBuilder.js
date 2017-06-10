@@ -79,6 +79,12 @@ bio.display = function () {
 var work = {
     "jobs": [{
             "employer": "Cricket",
+            "title": "L2 Professional Business Manager",
+            "location": "Atlanta, GA",
+            "dates": 2016,
+            "description": "I assist with training reps on how to use tools to help Authorized Retailers and Corporate Stores, audit Vendors, and handling escalations from various deptartment"
+        },{
+            "employer": "Cricket",
             "title": "ROS Desk Tier 2 Specialist",
             "location": "Atlanta, GA",
             "dates": 2014,
