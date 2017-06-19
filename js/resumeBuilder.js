@@ -215,9 +215,9 @@ var projects = {
         }]
 };
 projects.display = function () {
-    for (project in projects.projects) {
+    for (var project in projects.projects) {
         var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-        var formattedTitle = formattedTitle.replace("#", projects.projects[project].url);
+        formattedTitle = formattedTitle.replace("#", projects.projects[project].url);
         formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
         var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
         if (projects.projects[project].images.length > 0) {
