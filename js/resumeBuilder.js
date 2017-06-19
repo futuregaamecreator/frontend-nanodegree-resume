@@ -223,17 +223,17 @@ projects.display = function () {
         if (projects.projects[project].images.length > 0) {
             for (var image in projects.projects[project].images) {
                 var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-
             }
         }
 
 
+        /*jshint ignore:start*/
         $("#projects").append(HTMLprojectStart);
         $(".project-entry:last").append(formattedTitle);
         $(".project-entry:last").append(formattedDates);
         $(".project-entry:last").append(formattedDescription);
         $(".project-entry:last").append(formattedImage);
-
+        /*jshint ignore:end*/
     }
 };
 
