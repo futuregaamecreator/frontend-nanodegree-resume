@@ -109,19 +109,19 @@ var work = {
             "description": "Assisted in Converting Wellstar Biggest Hospital from Paper Records to Electronic Medical Record"
         }]
 };
-work.display = function () {
-    for (var job in work.jobs) {
+work.display = function (){
+ work.jobs.forEach(function(job) {
         $("#workExperience").append(HTMLworkStart);
-        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
         var formattedEmployerTitle = formattedEmployer + formattedTitle;
         $(".work-entry:last").append(formattedEmployerTitle);
-        var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+        var formattedDates = HTMLworkDates.replace("%data%", job.dates);
         $(".work-entry:last").append(formattedDates);
 
-        var formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[job].description);
+        var formattedDescription = HTMLworkDescription.replace('%data%', job.description);
         $('.work-entry:last').append(formattedDescription);
-    }
+    });
 };
 
 var education = {
@@ -130,65 +130,71 @@ var education = {
             "location": "Decatur, GA",
             "degree": "Bachelor of Science",
             "majors": "Game Simulation and Programming",
-            "dates": 2009,
+            "dates": "2009",
             "url": "http://www.devry.edu/"
         },
     ],
     "onlineCourses": [{
             "title": "Intro to HTML and CSS",
             "school": "Udacity",
-            "dates": 2015,
+            "dates": "2015",
             "url": "https://www.udacity.com/course/intro-to-html-and-css--ud304-nd/"
         }, {
             "title": "Responsive Web Design Fundementals",
             "school": "Udacity",
-            "dates": 2015,
+            "dates": "2015",
             "url": "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893-nd/"
         }, {
             "title": "Responsive Images",
             "school": "Udacity",
-            "dates": 2015,
+            "dates": "2015",
             "url": "https://www.udacity.com/course/responsive-images--ud882-nd/"
         }, {
             "title": "JavaScript Fundamentals",
             "school": "Udacity",
-            "dates": 2015,
+            "dates": "2015",
             "url": "https://www.udacity.com/course/javascript-basics--ud804-nd/"
         }, {
             "title": "Front-End Web Developer Nanodegree",
             "school": "Udacity",
-            "dates": 2015,
+            "dates": "2015",
             "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001/"
         }]
 };
-education.display = function () {
-    for (var school in education.schools) {
-        var formattedSchool = HTMLschoolName.replace("%data%", education.schools[school].name);
-        formattedSchool = formattedSchool.replace("#", education.schools[school].url);
-        var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+education.display = function() {
+  education.schools.forEach(function(school) {
+    $("#education").append(HTMLschoolStart);
+
+        var formattedSchool = HTMLschoolName.replace("%data%", school.name);
+        formattedSchool = formattedSchool.replace("#", school.url);
+        var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree);
         var formattedSchoolDegree = formattedSchool + formattedDegree;
-        var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-        var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
+        var formattedDates = HTMLschoolDates.replace("%data%", school.dates);
+        var formattedMajor = HTMLschoolMajor.replace("%data%", school.majors);
 
         $("#education").append(HTMLschoolStart);
         $(".education-entry:last").append(formattedSchoolDegree);
         $(".education-entry:last").append(formattedDates);
         $(".education-entry:last").append(formattedMajor);
-    }
-    $("#education").append(HTMLonlineClasses);
-    $("#education").append(HTMLschoolStart);
-    for ( var onlineCourse in education.onlineCourses) {
-        var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
-        formattedOnlineTitle = formattedOnlineTitle.replace("#", education.onlineCourses[onlineCourse].url);
-        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
+    });
+
+ $("#education").append(HTMLonlineClasses);
+   education.onlineCourses.forEach(function(course) {
+
+     $("#education").append(HTMLschoolStart);
+        var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", course.title);
+        formattedOnlineTitle = formattedOnlineTitle.replace("#", course.url);
+        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", course.school);
         var formattedOnlineTitleOnlineSchool = formattedOnlineTitle + formattedOnlineSchool;
+
+        $("#education").append(HTMLschoolStart);
         $(".education-entry:last").append(formattedOnlineTitleOnlineSchool);
-        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
+        var formattedOnlineDates = HTMLonlineDates.replace("%data%", course.dates);
         $(".education-entry:last").append(formattedOnlineDates);
-        var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url);
+        var formattedURL = HTMLonlineURL.replace("%data%", course.url);
         $(".education-entry:last").append(formattedURL);
 
-    }
+    });
 };
 
 var projects = {
@@ -214,28 +220,24 @@ var projects = {
             "url": "http://gxgaming.com"
         }]
 };
+
 projects.display = function () {
-    for (var project in projects.projects) {
-        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-        formattedTitle = formattedTitle.replace("#", projects.projects[project].url);
-        formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-        if (projects.projects[project].images.length > 0) {
-            for (var image in projects.projects[project].images) {
-                var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-            }
-        }
-
-
-        /*jshint ignore:start*/
-        $("#projects").append(HTMLprojectStart);
+    projects.projects.forEach(function(project) {
+      $("#projects").append(HTMLprojectStart);
+        var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
         $(".project-entry:last").append(formattedTitle);
+        formattedTitle = formattedTitle.replace("#", project.url);
+        formattedDates = HTMLprojectDates.replace("%data%", project.dates);
         $(".project-entry:last").append(formattedDates);
+        var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
         $(".project-entry:last").append(formattedDescription);
-        $(".project-entry:last").append(formattedImage);
-        /*jshint ignore:end*/
-    }
-};
+        if (project.images.length > 0) {
+            var formattedImage = HTMLprojectImage.replace("%data%", project.images);
+            $(".project-entry:last").append(formattedImage);
+          }
+        });
+    };
+
 
 $("#mapDiv").append(googleMap);
 
