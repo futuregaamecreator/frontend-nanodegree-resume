@@ -61,31 +61,31 @@ var work = {
             "employer": "Cricket",
             "title": "L2 Professional Business Manager",
             "location": "Atlanta, GA",
-            "dates": 2016,
+            "dates": "2016",
             "description": "I assist with training reps on how to use tools to help Authorized Retailers and Corporate Stores, audit Vendors, and handling escalations from various deptartment"
         },{
             "employer": "Cricket",
             "title": "ROS Desk Tier 2 Specialist",
             "location": "Atlanta, GA",
-            "dates": 2014,
+            "dates": "2014",
             "description": "I assist all Cricket Dealer with issues with Store Issues such as Setting up Camera Systesm, Not able to open applications, and Locked out of Accounts"
         }, {
             "employer": "Horizon Software",
             "title": "K - 12 POS Anaylst ",
             "location": "Duluth,GA ",
-            "dates": 2014,
+            "dates": "2014",
             "description": "I fixed school system POS system Remotely"
         }, {
             "employer": "OutComes Heatlh",
             "title": "Document Management Specialist",
             "location": "Alpharetta, GA ",
-            "dates": 2014,
+            "dates": "2014",
             "description": " Verified Electronic Medical Records for Accurate reports and Merge Duplicates"
         }, {
             "employer": "Wellstar",
             "title": "Kennestone Implation Specialist",
             "location": "Marietta, GA",
-            "dates": 2013,
+            "dates": "2013",
             "description": "Assisted in Converting Wellstar Biggest Hospital from Paper Records to Electronic Medical Record"
         }]
 };
@@ -96,6 +96,8 @@ work.display = function (){
         var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
         var formattedEmployerTitle = formattedEmployer + formattedTitle;
         $(".work-entry:last").append(formattedEmployerTitle);
+        var formattedJobLocation = HTMLworkLocation.replace("%data%", job.location);
+        $(".work-entry:last").append(formattedJobLocation);
         var formattedDates = HTMLworkDates.replace("%data%", job.dates);
         $(".work-entry:last").append(formattedDates);
 
@@ -149,11 +151,13 @@ education.display = function() {
         formattedSchool = formattedSchool.replace("#", school.url);
         var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree);
         var formattedSchoolDegree = formattedSchool + formattedDegree;
+        var formattedLocation = HTMLschoolLocation.replace("%data%", school.location);
         var formattedDates = HTMLschoolDates.replace("%data%", school.dates);
         var formattedMajor = HTMLschoolMajor.replace("%data%", school.majors);
 
         $("#education").append(HTMLschoolStart);
         $(".education-entry:last").append(formattedSchoolDegree);
+        $(".education-entry:last").append(formattedLocation);
         $(".education-entry:last").append(formattedDates);
         $(".education-entry:last").append(formattedMajor);
     });
@@ -180,21 +184,21 @@ education.display = function() {
 var projects = {
     "projects": [{
             "title": "ProfileES",
-            "dates": 2013,
+            "dates": "2013",
             "description": "Interned for Accelerated Design and helped create their Kickstart web page. Created Webforms, Created Custom Rules in PHP, and some Front End work",
             "images": ["images/ProfileES.jpg"],
             "url": "http://profilees.com"
         },
         {
             "title": "Formula ATL",
-            "dates": 2015,
+            "dates": "2015",
             "description": "Created a Wordpress website for a Private Car Seller that sells custom cars to Celebrities and sports player. Created a Custom Login and Created a unique website layout for new buyers and admins to update content",
             "images": ["images/forumula1.jpg"],
             "url": "http://formulaatl.com"
         },
         {
             "title": "GX Website",
-            "dates": 2015,
+            "dates": "2015",
             "description": "Created a new responsive HTML website for a Gaming Lounge in ATL",
             "images": ["images/gx.jpg"],
             "url": "http://gxgaming.com"
@@ -211,10 +215,11 @@ projects.display = function () {
         $(".project-entry:last").append(formattedDates);
         var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
         $(".project-entry:last").append(formattedDescription);
-
+        projects.images.forEach(function(project) {
+          $("#projects").append(HTMLprojectStart);
             var formattedImage = HTMLprojectImage.replace("%data%", project.images);
             $(".project-entry:last").append(formattedImage);
-          
+            });
         });
     };
 
