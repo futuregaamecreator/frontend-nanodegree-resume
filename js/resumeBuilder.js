@@ -215,8 +215,7 @@ projects.display = function () {
         $(".project-entry:last").append(formattedDates);
         var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
         $(".project-entry:last").append(formattedDescription);
-        projects.images.forEach(function(project) {
-          $("#projects").append(HTMLprojectStart);
+        projects.projects.forEach(function(image) {
             var formattedImage = HTMLprojectImage.replace("%data%", project.images);
             $(".project-entry:last").append(formattedImage);
             });
