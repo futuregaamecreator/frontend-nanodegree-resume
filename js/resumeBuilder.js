@@ -186,7 +186,7 @@ var projects = {
             "title": "ProfileES",
             "dates": "2013",
             "description": "Interned for Accelerated Design and helped create their Kickstart web page. Created Webforms, Created Custom Rules in PHP, and some Front End work",
-            "images": ["images/ProfileES.jpg"],
+            "images": ["images/profilees.jpg"],
             "url": "http://profilees.com"
         },
         {
@@ -207,6 +207,8 @@ var projects = {
 
 projects.display = function () {
     projects.projects.forEach(function(project) {
+        console.log(project);
+        console.log(project.images);
       $("#projects").append(HTMLprojectStart);
         var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
         $(".project-entry:last").append(formattedTitle);
@@ -215,9 +217,11 @@ projects.display = function () {
         $(".project-entry:last").append(formattedDates);
         var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
         $(".project-entry:last").append(formattedDescription);
-        projects.projects.forEach(function(image) {
-            var formattedImage = HTMLprojectImage.replace("%data%", project.images);
+     //   projects.projects.forEach(function(image) {
+        project.images.forEach(function(image) {
+            var formattedImage = HTMLprojectImage.replace("%data%", image);
             $(".project-entry:last").append(formattedImage);
+            console.log(image);
             });
         });
     };
