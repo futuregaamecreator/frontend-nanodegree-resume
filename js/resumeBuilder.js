@@ -111,7 +111,7 @@ var education = {
             "name": "DeVry University",
             "location": "Decatur, GA",
             "degree": "Bachelor of Science",
-            "majors": "Game Simulation and Programming",
+            "majors": ["Game Simulation and Programming"],
             "dates": "2009",
             "url": "http://www.devry.edu/"
         },
@@ -151,18 +151,20 @@ education.display = function() {
         var formattedDegree = HTMLschoolDegree.replace("%data%", place.degree);
         var formattedSchoolDegree = formattedSchool + formattedDegree;
         var formattedLocation = HTMLschoolLocation.replace("%data%", place.location);
-        var formattedDates = HTMLschoolDates.replace("%data%", place.dates);
-        var formattedMajor = HTMLschoolMajor.replace("%data%", place.majors);
-
         $("#education").append(HTMLschoolStart);
 
         $(".education-entry:last").append(formattedSchoolDegree);
         $(".education-entry:last").append(formattedLocation);
+        var formattedDates = HTMLschoolDates.replace("%data%", place.dates);
         $(".education-entry:last").append(formattedDates);
+        place.majors.forEach(function(major) {
+        var formattedMajor = HTMLschoolMajor.replace("%data%", major);
         $(".education-entry:last").append(formattedMajor);
-
+        });
+        });
+        $("#education").append(HTMLonlineClasses);
    education.onlineCourses.forEach(function(course) {
-  $("#education").append(HTMLonlineClasses);
+        $("#education").append(HTMLschoolStart);
         var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", course.title);
         formattedOnlineTitle = formattedOnlineTitle.replace("#", course.url);
         var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", course.school);
@@ -173,7 +175,7 @@ education.display = function() {
         $(".education-entry:last").append(formattedOnlineDates);
         var formattedURL = HTMLonlineURL.replace("%data%", course.url);
         $(".education-entry:last").append(formattedURL);
-        });
+
     });
 };
 
